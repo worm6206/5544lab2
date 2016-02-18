@@ -62,6 +62,8 @@ function run(){
 		    .attr("width", width)
 		    .attr("height", height);
 
+// ************* Printing Text ***************
+
 		var textSpace = svg
 			.selectAll("text")
 			.data(source)
@@ -75,10 +77,20 @@ function run(){
 			.attr("font-family", "sans-serif")
 			.attr("font-size", function(d){return d['1'];})
 			.attr("fill", function(d, i) { return fill(i); });
+
+// ************* Printing Text END ***************
+	
+		//TODO: Select <text> one by one, put it closest to center but no overlap.
+		//		> Or force graph
+		//		mouse events: hover(show songs involved), 
+		//					  select(show texts with same song envolved)
+		//		year range selector
+		//		scatter plot
 	}
 	catch(err) {
 		console.log(err);
 	}
+
 }
 
 if(source === undefined){
