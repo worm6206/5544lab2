@@ -9,6 +9,9 @@
 
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -29,7 +32,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="./multi.html">Multi years</a></li>
+        <li><a href="#">Multi years</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">2010s<span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -137,7 +140,20 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<p class="text-center" style="font-size: 20px;"></p>
+<button class="btn btn-default" onclick="f1950s()">1950s</button>
+<button class="btn btn-default" onclick="f1960s()">1960s</button>
+<button class="btn btn-default" onclick="f1970s()">1970s</button>
+<button class="btn btn-default" onclick="f1980s()">1980s</button>
+<button class="btn btn-default" onclick="f1990s()">1990s</button>
+<button class="btn btn-default" onclick="f2000s()">2000s</button>
+<button class="btn btn-default" onclick="f2010s()">2010s</button>
+<hr>
+<p>
+  <p style="display: inline;">Year range:</p>
+  <p class="text-primary"  id="amount"   style="display: inline; ">
+</p><br><br>
+ 
+<div id="slider-range" style="max-width: 500px;"></div>
 </body>
-	<script src="js/index.js" charset="utf-8"></script>
+	<script src="js/multi.js" charset="utf-8"></script>
 </html>
