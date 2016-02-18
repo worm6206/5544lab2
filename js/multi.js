@@ -113,16 +113,14 @@ function run(){
 function change(){
 	$('svg').remove();
 	var slider = $( "#slider-range" ).slider( "option", "values" );
-	console.log(slider[0]+","+slider[1]);
+	// console.log(slider[0]+","+slider[1]);
 	source = [];
 	var start = slider[0] , end = slider[1] , rawdata="";
-	if(start === end) {
-		rawdata = readTextFile("data/" + start +".csv");
-	}else{
-		for(var i = start; start < end; start++){
-			rawdata += readTextFile("./data/"+i+".csv");
-		}
+	while(start<=end){
+		rawdata += readTextFile("./data/"+start+".csv");
+		start++;
 	}
+
 	source = csvJSON(rawdata);
 	run();
 }
