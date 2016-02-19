@@ -32,6 +32,7 @@ function csvJSON(csv){
 		  }
 		  result.push(obj);
 	  }
+	  result.reverse();
 	  return result;
 	}
 	catch(err) {
@@ -52,7 +53,6 @@ var path = window.location.href;
 var source = csvJSON(readTextFile("data/" + path +".csv"));
 
 function run(){
-	try{
 
 		var fill = d3.scale.category20();
 
@@ -69,12 +69,12 @@ function run(){
 			.data(source)
 			.enter()
 			.append("text");
-
+//(-1^Math.round(Math.random())
 		var text = textSpace
-			.attr("x", function(d) { return 100 + ((width-300) * Math.random()); })
-			.attr("y", function(d) { return 100 + ((height-200) * Math.random()) ; })
+			.attr("x", function(d) { return (width/2) + ((Math.random()*(width/2))*(Math.random()*2-1)); })
+			.attr("y", function(d) { return (height/2) + ((Math.random()*(height/2))*(Math.random()*2-1)); })
 			.text( function (d) { return d['0']; })
-			.attr("font-family", "sans-serif")
+			.attr("font-family", "Arial Black")
 			.attr("font-size", function(d){return d['1'];})
 			.attr("fill", function(d, i) { return fill(i); });
 
@@ -86,10 +86,7 @@ function run(){
 		//					  select(show texts with same song envolved)
 		//		year range selector
 		//		scatter plot
-	}
-	catch(err) {
-		console.log(err);
-	}
+
 
 }
 

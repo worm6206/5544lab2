@@ -1,3 +1,14 @@
+
+
+$(document).ready(function(){
+    $(document).ajaxStart(function(){
+        $("#load").show();
+    });
+    $(document).ajaxComplete(function(){
+        $("#load").hide();
+    });
+});
+
   $(function() {
     $( "#slider-range" ).slider({
       range: true,
@@ -68,46 +79,43 @@ var path = window.location.href;
 var source;
 // var source = csvJSON(readTextFile("data/" + path +".csv"));
 
+var width = window.innerWidth, height = window.innerHeight - 100;
 function run(){
-	try{
+  var fill = d3.scale.category20();
+  var temp = [], temp2 = [], i=0;
+  source.forEach(function(d) {
+    temp.push(d['0']);
+    temp2.push(d['1']);
+  });
 
-		var fill = d3.scale.category20();
+  d3.layout.cloud().size([width, height])
+      .words(temp.map(function(d) {
+            return {text: d, size: temp2[i++]};
+          }))
+      .rotate(function() { return ~~(Math.random() * 2) * 90; })
+      .font("Impact")
+      .fontSize(function(d) { return d.size; })
+      .on("end", draw)
+      .start();
 
-		var width = window.innerWidth, height = window.innerHeight - 100;
-
-		var svg = d3.select("body").append("svg")
-		    .attr("width", width)
-		    .attr("height", height);
-
-// ************* Printing Text ***************
-
-		var textSpace = svg
-			.selectAll("text")
-			.data(source)
-			.enter()
-			.append("text");
-
-		var text = textSpace
-			.attr("x", function(d) { return (width/2) + ((Math.random()*(width/2))*(Math.random()*2-1)); })
-			.attr("y", function(d) { return (height/2) + ((Math.random()*(height/2))*(Math.random()*2-1)); })
-			.text( function (d) { return d['0']; })
-			.attr("font-family", "sans-serif")
-			.attr("font-size", function(d){return d['1'];})
-			.attr("fill", function(d, i) { return fill(i); });
-
-// ************* Printing Text END ***************
-	
-		//TODO: Select <text> one by one, put it closest to center but no overlap.
-		//		> Or force graph
-		//		mouse events: hover(show songs involved), 
-		//					  select(show texts with same song envolved)
-		//		year range selector
-		//		scatter plot
-	}
-	catch(err) {
-		console.log(err);
-	}
-
+  function draw(words) {
+    d3.select("body").append("svg")
+        .attr("width", width)
+        .attr("height", height)
+      .append("g")
+        .attr("transform", "translate("+ width/2 +","+ height/2 +")")
+      .selectAll("text")
+        .data(words)
+      .enter().append("text")
+        .style("font-size", function(d) { return d.size + "px"; })
+        .style("font-family", "Impact")
+        .style("fill", function(d, i) { return fill(i); })
+        .attr("text-anchor", "middle")
+        .attr("transform", function(d) {
+          return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+        })
+        .text(function(d) { return d.text; });
+  }
 }
 
 function change(){
@@ -178,6 +186,9 @@ function f2010s(){
 }
 
 if(source === undefined){
-	$('.text-center').text("Please select a year to begin.");
+	
+        $("#load").hide();
 
-}else run();
+}else {
+	run();
+}
