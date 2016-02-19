@@ -15,6 +15,7 @@
 	  <style type="text/css">
 
 	  </style>
+	<script type="text/javascript" src="https://jardindesconnaissances.googlecode.com/svn-history/r82/trunk/public/js/d3.layout.cloud.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -27,113 +28,113 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="./">
-      <img class="media-object" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Billboard_logo.svg/300px-Billboard_logo.svg.png" width="100px" style="padding-bottom: 5px ;display: inline;"> Top 100 Word Cloud
+      <a class="navbar-brand" href="./lib.html">
+      <img class="media-object" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Billboard_logo.svg/300px-Billboard_logo.svg.png" width="100px" style="padding-bottom: 5px ;display: inline;"> Top 100 Word Cloud (Library)
       </a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="#">Multi years</a></li>
+        <li><a href="./multilib.html">Multi years</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">2010s<span class="caret"></span></a>
           <ul class="dropdown-menu">
-			<li><a href="./?2015">2015</a></li>
-			<li><a href="./?2014">2014</a></li>
-			<li><a href="./?2013">2013</a></li>
-			<li><a href="./?2012">2012</a></li>
-			<li><a href="./?2011">2011</a></li>
-			<li><a href="./?2010">2010</a></li>
+			<li><a href="./lib.html?2015">2015</a></li>
+			<li><a href="./lib.html?2014">2014</a></li>
+			<li><a href="./lib.html?2013">2013</a></li>
+			<li><a href="./lib.html?2012">2012</a></li>
+			<li><a href="./lib.html?2011">2011</a></li>
+			<li><a href="./lib.html?2010">2010</a></li>
           </ul>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">2000s<span class="caret"></span></a>
           <ul class="dropdown-menu">
-			<li><a href="./?2009">2009</a></li>
-			<li><a href="./?2008">2008</a></li>
-			<li><a href="./?2007">2007</a></li>
-			<li><a href="./?2006">2006</a></li>
-			<li><a href="./?2005">2005</a></li>
-			<li><a href="./?2004">2004</a></li>
-			<li><a href="./?2003">2003</a></li>
-			<li><a href="./?2002">2002</a></li>
-			<li><a href="./?2001">2001</a></li>
-			<li><a href="./?2000">2000</a></li>
+			<li><a href="./lib.html?2009">2009</a></li>
+			<li><a href="./lib.html?2008">2008</a></li>
+			<li><a href="./lib.html?2007">2007</a></li>
+			<li><a href="./lib.html?2006">2006</a></li>
+			<li><a href="./lib.html?2005">2005</a></li>
+			<li><a href="./lib.html?2004">2004</a></li>
+			<li><a href="./lib.html?2003">2003</a></li>
+			<li><a href="./lib.html?2002">2002</a></li>
+			<li><a href="./lib.html?2001">2001</a></li>
+			<li><a href="./lib.html?2000">2000</a></li>
           </ul>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">1990s<span class="caret"></span></a>
           <ul class="dropdown-menu">
-			<li><a href="./?1999">1999</a></li>
-			<li><a href="./?1998">1998</a></li>
-			<li><a href="./?1997">1997</a></li>
-			<li><a href="./?1996">1996</a></li>
-			<li><a href="./?1995">1995</a></li>
-			<li><a href="./?1994">1994</a></li>
-			<li><a href="./?1993">1993</a></li>
-			<li><a href="./?1992">1992</a></li>
-			<li><a href="./?1991">1991</a></li>
-			<li><a href="./?1990">1990</a></li>
+			<li><a href="./lib.html?1999">1999</a></li>
+			<li><a href="./lib.html?1998">1998</a></li>
+			<li><a href="./lib.html?1997">1997</a></li>
+			<li><a href="./lib.html?1996">1996</a></li>
+			<li><a href="./lib.html?1995">1995</a></li>
+			<li><a href="./lib.html?1994">1994</a></li>
+			<li><a href="./lib.html?1993">1993</a></li>
+			<li><a href="./lib.html?1992">1992</a></li>
+			<li><a href="./lib.html?1991">1991</a></li>
+			<li><a href="./lib.html?1990">1990</a></li>
           </ul>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">1980s<span class="caret"></span></a>
           <ul class="dropdown-menu">
-			<li><a href="./?1989">1989</a></li>
-			<li><a href="./?1988">1988</a></li>
-			<li><a href="./?1987">1987</a></li>
-			<li><a href="./?1986">1986</a></li>
-			<li><a href="./?1985">1985</a></li>
-			<li><a href="./?1984">1984</a></li>
-			<li><a href="./?1983">1983</a></li>
-			<li><a href="./?1982">1982</a></li>
-			<li><a href="./?1981">1981</a></li>
-			<li><a href="./?1980">1980</a></li>
+			<li><a href="./lib.html?1989">1989</a></li>
+			<li><a href="./lib.html?1988">1988</a></li>
+			<li><a href="./lib.html?1987">1987</a></li>
+			<li><a href="./lib.html?1986">1986</a></li>
+			<li><a href="./lib.html?1985">1985</a></li>
+			<li><a href="./lib.html?1984">1984</a></li>
+			<li><a href="./lib.html?1983">1983</a></li>
+			<li><a href="./lib.html?1982">1982</a></li>
+			<li><a href="./lib.html?1981">1981</a></li>
+			<li><a href="./lib.html?1980">1980</a></li>
           </ul>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">1970s<span class="caret"></span></a>
           <ul class="dropdown-menu">
-			<li><a href="./?1979">1979</a></li>
-			<li><a href="./?1978">1978</a></li>
-			<li><a href="./?1977">1977</a></li>
-			<li><a href="./?1976">1976</a></li>
-			<li><a href="./?1975">1975</a></li>
-			<li><a href="./?1974">1974</a></li>
-			<li><a href="./?1973">1973</a></li>
-			<li><a href="./?1972">1972</a></li>
-			<li><a href="./?1971">1971</a></li>
-			<li><a href="./?1970">1970</a></li>
+			<li><a href="./lib.html?1979">1979</a></li>
+			<li><a href="./lib.html?1978">1978</a></li>
+			<li><a href="./lib.html?1977">1977</a></li>
+			<li><a href="./lib.html?1976">1976</a></li>
+			<li><a href="./lib.html?1975">1975</a></li>
+			<li><a href="./lib.html?1974">1974</a></li>
+			<li><a href="./lib.html?1973">1973</a></li>
+			<li><a href="./lib.html?1972">1972</a></li>
+			<li><a href="./lib.html?1971">1971</a></li>
+			<li><a href="./lib.html?1970">1970</a></li>
           </ul>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">1960s<span class="caret"></span></a>
           <ul class="dropdown-menu">
-			<li><a href="./?1969">1969</a></li>
-			<li><a href="./?1968">1968</a></li>
-			<li><a href="./?1967">1967</a></li>
-			<li><a href="./?1966">1966</a></li>
-			<li><a href="./?1965">1965</a></li>
-			<li><a href="./?1964">1964</a></li>
-			<li><a href="./?1963">1963</a></li>
-			<li><a href="./?1962">1962</a></li>
-			<li><a href="./?1961">1961</a></li>
-			<li><a href="./?1960">1960</a></li>
+			<li><a href="./lib.html?1969">1969</a></li>
+			<li><a href="./lib.html?1968">1968</a></li>
+			<li><a href="./lib.html?1967">1967</a></li>
+			<li><a href="./lib.html?1966">1966</a></li>
+			<li><a href="./lib.html?1965">1965</a></li>
+			<li><a href="./lib.html?1964">1964</a></li>
+			<li><a href="./lib.html?1963">1963</a></li>
+			<li><a href="./lib.html?1962">1962</a></li>
+			<li><a href="./lib.html?1961">1961</a></li>
+			<li><a href="./lib.html?1960">1960</a></li>
           </ul>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">1950s<span class="caret"></span></a>
           <ul class="dropdown-menu">
-			<li><a href="./?1959">1959</a></li>
-			<li><a href="./?1958">1958</a></li>
-			<li><a href="./?1957">1957</a></li>
-			<li><a href="./?1956">1956</a></li>
-			<li><a href="./?1955">1955</a></li>
-			<li><a href="./?1954">1954</a></li>
-			<li><a href="./?1953">1953</a></li>
-			<li><a href="./?1952">1952</a></li>
-			<li><a href="./?1951">1951</a></li>
+			<li><a href="./lib.html?1959">1959</a></li>
+			<li><a href="./lib.html?1958">1958</a></li>
+			<li><a href="./lib.html?1957">1957</a></li>
+			<li><a href="./lib.html?1956">1956</a></li>
+			<li><a href="./lib.html?1955">1955</a></li>
+			<li><a href="./lib.html?1954">1954</a></li>
+			<li><a href="./lib.html?1953">1953</a></li>
+			<li><a href="./lib.html?1952">1952</a></li>
+			<li><a href="./lib.html?1951">1951</a></li>
           </ul>
         </li>
       </ul>
@@ -141,7 +142,7 @@
         <li><a href="https://github.com/worm6206/5544lab2">Github</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="./lib.html">Using Library</a></li>
+        <li><a href="./">From Scratch</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -160,6 +161,30 @@
 </p><br><br>
  
 <div id="slider-range" style="max-width: 500px;"></div>
+<div class="container" id="load">
+	<button class="btn btn-lg btn-warning"><span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> Loading...</button>
+</div>
 </body>
-	<script src="js/multi.js" charset="utf-8"></script>
+<style type="text/css">
+.glyphicon-refresh-animate {
+    -animation: spin .7s infinite linear;
+    -webkit-animation: spin2 .7s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+
+#load {
+    position:fixed;
+    top: 50%;
+    left: 45%;
+</style>
+	<script src="js/multilib.js" charset="utf-8"></script>
 </html>
