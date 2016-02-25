@@ -114,7 +114,26 @@ function run(){
         .attr("transform", function(d) {
           return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
         })
-        .text(function(d) { return d.text; });
+        .text(function(d) { return d.text; })
+			.on("mouseover", function(d) {
+			        tooltip.transition()
+			          .duration(0)
+			          .style("opacity", .9);
+			        tooltip.html("Word: "+d.text+"<br>Count: "+d3.round(d.size))
+			          .style("left", (d3.event.pageX - 105) + "px")
+			          .style("top", (d3.event.pageY - 58) + "px");
+			      })
+			      .on("mouseout", function(d) {
+			        tooltip.transition()
+			          .duration(0)
+			          .style("opacity", 0);
+			      });
+
+  // add the tooltip area to the webpage
+  var tooltip = d3.select("body").append("div")
+    .attr("class", "tooltip")
+    .style("background-color","#666666")
+    .style("opacity", 0);
   }
 }
 

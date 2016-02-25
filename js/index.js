@@ -76,7 +76,26 @@ function run(){
 			.text( function (d) { return d['0']; })
 			.attr("font-family", "Arial Black")
 			.attr("font-size", function(d){return d['1'];})
-			.attr("fill", function(d, i) { return fill(i); });
+			.attr("fill", function(d, i) { return fill(i); })
+			.on("mouseover", function(d) {
+			        tooltip.transition()
+			          .duration(0)
+			          .style("opacity", .9);
+			        tooltip.html("Word: "+d['0']+"<br>Count: "+d3.round(d['1']))
+			          .style("left", (d3.event.pageX - 105) + "px")
+			          .style("top", (d3.event.pageY - 58) + "px");
+			      })
+			      .on("mouseout", function(d) {
+			        tooltip.transition()
+			          .duration(0)
+			          .style("opacity", 0);
+			      });
+
+  // add the tooltip area to the webpage
+  var tooltip = d3.select("body").append("div")
+    .attr("class", "tooltip")
+    .style("background-color","#666666")
+    .style("opacity", 0);
 
 // ************* Printing Text END ***************
 	
