@@ -65,7 +65,7 @@ function run(){
       .words(temp.map(function(d) {
             return {text: d, size: temp2[i++]};
           }))
-      .rotate(function() { return ~~(Math.random() * 2) * 90; })
+      // .rotate(function() { return ~~(Math.random() * 2) * 90; })
       .font("Impact")
       .fontSize(function(d) { return d.size; })
       .on("end", draw)
