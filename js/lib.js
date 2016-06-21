@@ -85,7 +85,7 @@ function run(){
         .style("fill", function(d, i) { return fill(i); })
         .attr("text-anchor", "middle")
         .attr("transform", function(d) {
-          return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+          return "translate(" + [d.x, d.y] + ")";
         })
         .text(function(d) { return d.text; })
       .on("mouseover", function(d) {
